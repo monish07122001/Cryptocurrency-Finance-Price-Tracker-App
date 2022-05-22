@@ -34,12 +34,6 @@ module.exports = {
     },
     {
       type: "confirm",
-      name: "wantMessages",
-      default: true,
-      message: "Do you want i18n messages (i.e. will this component use text)?",
-    },
-    {
-      type: "confirm",
       name: "wantLoadable",
       default: false,
       message: "Do you want to load the component asynchronously?",
@@ -81,11 +75,6 @@ module.exports = {
         abortOnFail: true,
       });
     }
-
-    actions.push({
-      type: "prettify",
-      path: "/components/",
-    });
 
     return actions;
   },

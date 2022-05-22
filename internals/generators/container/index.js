@@ -43,12 +43,6 @@ module.exports = {
     },
     {
       type: "confirm",
-      name: "wantMessages",
-      default: true,
-      message: "Do you want i18n messages (i.e. will this component use text)?",
-    },
-    {
-      type: "confirm",
       name: "wantLoadable",
       default: true,
       message: "Do you want to load resources asynchronously?",
@@ -91,12 +85,6 @@ module.exports = {
         templateFile: "./container/actions.js.hbs",
         abortOnFail: true,
       });
-      actions.push({
-        type: "add",
-        path: "../../src/app/containers/{{properCase name}}/tests/actions.test.js",
-        templateFile: "./container/actions.test.js.hbs",
-        abortOnFail: true,
-      });
 
       // Constants
       actions.push({
@@ -113,12 +101,6 @@ module.exports = {
         templateFile: "./container/reducer.js.hbs",
         abortOnFail: true,
       });
-      actions.push({
-        type: "add",
-        path: "../../src/app/containers/{{properCase name}}/tests/reducer.test.js",
-        templateFile: "./container/reducer.test.js.hbs",
-        abortOnFail: true,
-      });
     }
 
     if (data.wantLoadable) {
@@ -129,11 +111,6 @@ module.exports = {
         abortOnFail: true,
       });
     }
-
-    actions.push({
-      type: "prettify",
-      path: "/containers/",
-    });
 
     return actions;
   },
